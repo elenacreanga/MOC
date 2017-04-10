@@ -8,7 +8,7 @@ namespace HomeworkOne
         private static void Main(string[] args)
         {
             //afișează când se schimbă sol candidat curent
-            //HillClimbingTest.GetResult(Strategy.Best, OptimizationFunction.Rastrigin);
+            HillClimbingTest.GetResult(Strategy.Best, OptimizationFunction.Rastrigin);
             //HillClimbingTest.GetResult(Strategy.Best, OptimizationFunction.Griewangk);
             //HillClimbingTest.GetResult(Strategy.Best, OptimizationFunction.Rosenbrock);
             //HillClimbingTest.GetResult(Strategy.Best, OptimizationFunction.SixHumpCamelBack);

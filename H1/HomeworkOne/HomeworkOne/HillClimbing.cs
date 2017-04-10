@@ -17,7 +17,7 @@ namespace HomeworkOne
             var bestSolutionRealRepresentation = Mapper.GetRealRepresentationOfBits(bestSolution, interval);
             var bestFunctionValue = optimizationFunction.Resolve(bestSolutionRealRepresentation);
 
-            Console.WriteLine("Best value to start: {0}", bestFunctionValue);
+            //Console.WriteLine("Best value to start: {0}", bestFunctionValue);
             var newInterval = interval;
             for (var i = 0; i < Constants.NumberOfSteps; i++)
             {
@@ -36,7 +36,7 @@ namespace HomeworkOne
                         localBestFunctionValue = functionValue;
                         localBestSolution = potentialSolution;
 
-                        Console.WriteLine("Local optimizationFunction value: " + localBestFunctionValue);
+                        //Console.WriteLine("Local optimizationFunction value: " + localBestFunctionValue);
 
                         if (strategy == Strategy.First)
                             break;
@@ -50,9 +50,9 @@ namespace HomeworkOne
                 }
             }
 
-            Console.WriteLine("Best value using Hill Climbing: " + bestFunctionValue);
-            Console.WriteLine("Best solution:");
-            Mapper.PrintBitArray(bestSolution);
+            //Console.WriteLine("Best value using Hill Climbing: " + bestFunctionValue);
+            //Console.WriteLine("Best solution:");
+            //Mapper.PrintBitArray(bestSolution);
             return bestSolution;
         }
     }

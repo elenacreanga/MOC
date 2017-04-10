@@ -42,6 +42,13 @@ namespace HomeworkOne
                 var bestChromosomesInfoList =
                     chromosomeInfo.OrderByDescending(x => x.Fitness).Take(NumberOfChromosomes).ToList();
                 var bestChromosomes = bestChromosomesInfoList.Select(x => x.Chromosomes).ToList();
+                //var hillClimbingChildChomosome = new HillClimbing().Resolve(optimizationFunction: optimizationFunction,
+                //                         interval: _interval,
+                //                         precission: 2,
+                //                         strategy: Strategy.Best,
+                //                         startSolution: bestChromosomes[0]);
+                //bestChromosomes = new List<BitArray> { hillClimbingChildChomosome };
+                //bestChromosomes.AddRange(bestChromosomesInfoList.Select(x => x.Chromosomes).ToList());
                 Console.WriteLine("Chromosome function value: {0}", (1 / bestChromosomesInfoList.First().Fitness - 0.1));
 
                 individualFitnessResults = GetIndividualFitness(bestChromosomes, interval, optimizationFunction);
@@ -98,12 +105,12 @@ namespace HomeworkOne
                 var secondChromosome = SelectChromosome(population, totalFitness, individualFitness);
                 var childChromosome = ApplyCrossOver(firstChromosome, secondChromosome);
                 childChromosome = ApplyMutation(childChromosome);
-
                 var hillClimbingChildChomosome = new HillClimbing().Resolve(optimizationFunction: optimizationFunction,
                                          interval: _interval,
                                          precission: 2,
                                          strategy: Strategy.Best,
                                          startSolution: childChromosome);
+                var hillClimbingChromosome = new List<BitArray> { hillClimbingChildChomosome };
                 childChromosomes.Add(hillClimbingChildChomosome);
             }
             return childChromosomes;

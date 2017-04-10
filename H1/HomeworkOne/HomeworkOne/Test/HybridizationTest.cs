@@ -37,13 +37,6 @@ namespace HomeworkOne.Test
                                                         numberOfIterations: 10,
                                                         interval: interval,
                                                         precission: 2);
-
-                    //new HillClimbing().Resolve(optimizationFunction: griewangk,
-                    //                     interval: interval,
-                    //                     precission: 2,
-                    //                     strategy: Strategy.Best,
-                    //                     startSolution: result[1]);
-
                     Console.ReadKey();
                     break;
                 case OptimizationFunction.Rastrigin:
